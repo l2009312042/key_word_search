@@ -40,7 +40,7 @@ steps/align_fmllr.sh --nj 5 --cmd "run.pl --mem 4G" data/dev_clean_2 data/lang e
 ```
        ./create_ecf_file.sh data/dev_clean_2/wav.scp data/ecf.xml
 ``` 
-##s2.3  
+## s2.3  
 
 其中make_L_align.sh第一个参数需要设置对 data/local/lang_tmp  在exp目录下需要有测试集的text文件   
 
