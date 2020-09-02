@@ -18,7 +18,7 @@ source ~/.bashrc
 ## 需要准备如下3个文件   
 `kwlist.xml` 、`ecf.xml` 、`rttm`
  
-脚本可执行kaldi/egs/babel/s5d  
+脚本使用 kaldi/egs/babel/s5d 目录下的脚本  
 # step1 
 
 对测试集先对齐  比如拿训练的qimeng1为例
