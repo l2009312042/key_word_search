@@ -21,7 +21,7 @@ source ~/.bashrc
 脚本使用 kaldi/egs/babel/s5d 目录下的脚本  
 # step1 
 
-对测试集先对齐  比如拿训练的qimeng1为例
+对测试集先对齐  比如拿训练的qimengke1为例
 
 ```
 datadir = /root/data/nlp_audio/kaldi/egs/qimengke1
