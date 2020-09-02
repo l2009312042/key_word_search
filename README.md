@@ -3,7 +3,7 @@ kaldi kws pipline
 
 
 
-##需要安装F4DE   
+## 需要安装F4DE   
 - 1 apt-get install perl gnuplot libxml2 sqlite rsync curl  
 - 2 curl -L https://cpanmin.us | perl -  App::cpanminus  
 - 3 git clone https://github.com/usnistgov/F4DE.git  cd F4DE  
@@ -15,11 +15,11 @@ vi  ~/.bashrc
 source ~/.bashrc
 ```   
 
-##需要准备如下3个文件 
+## 需要准备如下3个文件   
 `kwlist.xml` 、`ecf.xml` 、`rttm`
  
-脚本可执行kaldi/egs/babel/s5d 
-#step1 
+脚本可执行kaldi/egs/babel/s5d  
+# step1 
 
 对测试集先对齐  比如拿训练的qimeng1为例
 
@@ -30,13 +30,13 @@ datadir = /root/data/nlp_audio/kaldi/egs/qimengke1
 ```
 steps/align_fmllr.sh --nj 5 --cmd "run.pl --mem 4G" data/dev_clean_2 data/lang exp/tri3b exp/tri3b_ali_dev_clean_2
 ```
-#step2 
+# step2 
 生成kwlist 、ecf、 rttm 
-##s2.1 
+## s2.1 
 ```
     ./genkwlist.sh  生成kwlist.xml,准备一个keyword.txt里面写入keyword即可
 ```
-##s2.2
+## s2.2
 ```
        ./create_ecf_file.sh data/dev_clean_2/wav.scp data/ecf.xml
 ``` 
@@ -57,7 +57,7 @@ steps/align_fmllr.sh --nj 5 --cmd "run.pl --mem 4G" data/dev_clean_2 data/lang e
 ``` 
     awk -F " " '{printf("%s %s 0.0 %s\n",$1,$1,$2)}'  utt2dur  >segments
 ```
-##s3.2
+## s3.2
 ```
 local/kws_setup.sh --case_insensitive true \
  --rttm-file exp/tri3b_ali_dev_clean_2/rttm \
@@ -67,7 +67,7 @@ data/lang \
 data/dev_clean_2
 ```
 
-#step4  Indexing and searching  
+# step4  Indexing and searching  
 
 ```
 local/kws_search.sh --cmd "run.pl --mem 4G"    \
