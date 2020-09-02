@@ -48,10 +48,10 @@ steps/align_fmllr.sh --nj 5 --cmd "run.pl --mem 4G" data/dev_clean_2 data/lang e
 ```  
    ./ali_to_rttm.sh data/dev_clean_2 data/lang exp/tri3b_ali_dev_clean_2
 ```
-#step3
+# step3  
 基础KWS 数据准备(无G2P模型)
 
-##s3.1 
+## s3.1   
 缺少segments文件 可由wav的dur产生  
 
 ``` 
