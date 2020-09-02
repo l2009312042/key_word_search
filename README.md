@@ -19,9 +19,9 @@ source ~/.bashrc
 `kwlist.xml` 、`ecf.xml` 、`rttm`
  
 脚本使用 kaldi/egs/babel/s5d 目录下的脚本  
-# step1 
+# step1  对测试集先对齐  
 
-对测试集先对齐  比如拿训练的qimengke1为例
+比如拿训练的qimengke1为例
 
 ```
 datadir = /root/data/nlp_audio/kaldi/egs/qimengke1
@@ -30,8 +30,7 @@ datadir = /root/data/nlp_audio/kaldi/egs/qimengke1
 ```
 steps/align_fmllr.sh --nj 5 --cmd "run.pl --mem 4G" data/dev_clean_2 data/lang exp/tri3b exp/tri3b_ali_dev_clean_2
 ```
-# step2 
-生成kwlist 、ecf、 rttm 
+# step2  生成kwlist 、ecf、 rttm 
 ## s2.1 
 ```
     ./genkwlist.sh  生成kwlist.xml,准备一个keyword.txt里面写入keyword即可
@@ -48,8 +47,7 @@ steps/align_fmllr.sh --nj 5 --cmd "run.pl --mem 4G" data/dev_clean_2 data/lang e
 ```  
    ./ali_to_rttm.sh data/dev_clean_2 data/lang exp/tri3b_ali_dev_clean_2
 ```
-# step3  
-基础KWS 数据准备(无G2P模型)
+# step3  基础KWS 数据准备(无G2P模型)
 
 ## s3.1   
 缺少segments文件 可由wav的dur产生  
